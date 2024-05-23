@@ -633,6 +633,7 @@ namespace Riz.XFramework.Data
 
             Func<IDbCommand, object> doExecute = cmd =>
             {
+                int index = 1;
                 reader = this.Database.ExecuteReader(cmd);
                 TypeDeserializer deserializer1 = null;
                 TypeDeserializer deserializer2 = null;
@@ -643,7 +644,7 @@ namespace Riz.XFramework.Data
                 TypeDeserializer deserializer7 = null;
                 do
                 {
-                    if (q1 == null)
+                    if (index == 1)
                     {
                         // 先查第一个类型集合
                         List<int> autoIncrements = null;
@@ -660,7 +661,7 @@ namespace Riz.XFramework.Data
                             q1 = collection;
                         }
                     }
-                    else if (q2 == null)
+                    else if (index == 2)
                     {
                         // 再查第二个类型集合
                         List<int> autoIncrements = null;
@@ -677,7 +678,7 @@ namespace Riz.XFramework.Data
                             if (q2 == null) q2 = collection;
                         }
                     }
-                    else if (q3 == null)
+                    else if (index == 3)
                     {
                         // 再查第三个类型集合
                         List<int> autoIncrements = null;
@@ -694,7 +695,7 @@ namespace Riz.XFramework.Data
                             if (q3 == null) q3 = collection;
                         }
                     }
-                    else if (q4 == null)
+                    else if (index == 4)
                     {
                         // 再查第四个类型集合
                         List<int> autoIncrements = null;
@@ -711,7 +712,7 @@ namespace Riz.XFramework.Data
                             if (q4 == null) q4 = collection;
                         }
                     }
-                    else if (q5 == null)
+                    else if (index == 5)
                     {
                         // 再查第五个类型集合
                         List<int> autoIncrements = null;
@@ -728,7 +729,7 @@ namespace Riz.XFramework.Data
                             if (q5 == null) q5 = collection;
                         }
                     }
-                    else if (q6 == null)
+                    else if (index == 6)
                     {
                         // 再查第六个类型集合
                         List<int> autoIncrements = null;
@@ -745,7 +746,7 @@ namespace Riz.XFramework.Data
                             if (q6 == null) q6 = collection;
                         }
                     }
-                    else
+                    else if (index == 7)
                     {
                         // 再查第七个类型集合
                         List<int> autoIncrements = null;
@@ -762,6 +763,8 @@ namespace Riz.XFramework.Data
                             if (q7 == null) q7 = collection;
                         }
                     }
+
+                    index += 1;
                 }
                 while (reader.NextResult());
 
